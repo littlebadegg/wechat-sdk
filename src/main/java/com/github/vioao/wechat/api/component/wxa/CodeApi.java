@@ -107,12 +107,10 @@ public class CodeApi {
      * 查询最新一次提交的审核状态（仅供第三方代小程序调用）.
      *
      * @param accessToken 第三方平台获取到的该小程序授权的authorizer_access_token
-     * @param auditId     提交审核时获得的审核id
      */
-    public static GetAuditstatusResponse getLatestAuditStatus(String accessToken, String auditId) {
-        String data = String.format("{\"auditid\":\"%s\"}", auditId);
+    public static GetAuditstatusResponse getLatestAuditStatus(String accessToken) {
         Map<String, String> params = Params.create("access_token", accessToken).get();
-        return HttpUtil.postJsonBean(GET_LATEST_AUDIT_STATUS, params, data, GetAuditstatusResponse.class);
+        return HttpUtil.getJsonBean(GET_LATEST_AUDIT_STATUS, params, GetAuditstatusResponse.class);
     }
 
 

@@ -7,7 +7,7 @@ import com.github.vioao.wechat.bean.response.BaseResponse;
  *
  * @author vioao
  */
-public class JsCode2sessionResponse extends BaseResponse {
+public class Jscode2sessionResponse extends BaseResponse {
     private String openid; // 用户唯一标识的openid
     private String sessionKey; // 会话密钥
 

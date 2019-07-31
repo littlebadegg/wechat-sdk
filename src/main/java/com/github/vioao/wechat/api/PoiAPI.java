@@ -17,7 +17,7 @@ import java.util.Map;
  *
  * @author vioao
  */
-public class PoiApi {
+public class PoiAPI {
 
     private static final String ADD_POI = Const.Uri.API_URI + "/cgi-bin/poi/addpoi";
 

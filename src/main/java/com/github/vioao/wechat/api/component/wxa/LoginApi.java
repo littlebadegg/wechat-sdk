@@ -1,7 +1,7 @@
 package com.github.vioao.wechat.api.component.wxa;
 
 import com.github.vioao.wechat.Const;
-import com.github.vioao.wechat.bean.response.component.wxa.JsCode2sessionResponse;
+import com.github.vioao.wechat.bean.response.component.wxa.Jscode2sessionResponse;
 import com.github.vioao.wechat.utils.Params;
 import com.github.vioao.wechat.utils.client.HttpUtil;
 
@@ -27,13 +27,13 @@ public class LoginApi {
      * @param appId                小程序的AppID
      * @param componentAppId       第三方平台appid
      * @param jsCode               登录时获取的 code
-     * @return {@link JsCode2sessionResponse}
+     * @return {@link Jscode2sessionResponse}
      */
-    public static JsCode2sessionResponse jscode2session(String componentAccessToken, String appId,
+    public static Jscode2sessionResponse jscode2session(String componentAccessToken, String appId,
                                                         String componentAppId, String jsCode) {
         Map<String, String> params = Params.create("appid", appId).put("js_code", jsCode)
                 .put("grant_type", "authorization_code").put("component_appid", componentAppId)
                 .put("component_access_token", componentAccessToken).get();
-        return HttpUtil.getJsonBean(JS_CODW_2_SESSION, params, JsCode2sessionResponse.class);
+        return HttpUtil.getJsonBean(JS_CODW_2_SESSION, params, Jscode2sessionResponse.class);
     }
 }
