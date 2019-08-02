@@ -29,11 +29,14 @@ public class GetCodeTemplateListResponse extends BaseResponse {
                 + '}';
     }
 
-    private static class CodeTemplate {
+    public static class CodeTemplate {
         private Long createTime; // 说开发者上传草稿时间
         private String userVersion; // 模版版本号，开发者自定义字段
         private String userDesc; // 模版描述 开发者自定义字段
         private Integer templateId; // 模版id
+        private String sourceMiniprogramAppid;//小程序ID
+        private String sourceMiniprogram;//小程序
+        private String developer;//开发人员
 
         public Long getCreateTime() {
             return createTime;
@@ -67,6 +70,30 @@ public class GetCodeTemplateListResponse extends BaseResponse {
             this.templateId = templateId;
         }
 
+        public String getSourceMiniprogramAppid() {
+            return sourceMiniprogramAppid;
+        }
+
+        public void setSourceMiniprogramAppid(String sourceMiniprogramAppid) {
+            this.sourceMiniprogramAppid = sourceMiniprogramAppid;
+        }
+
+        public String getSourceMiniprogram() {
+            return sourceMiniprogram;
+        }
+
+        public void setSourceMiniprogram(String sourceMiniprogram) {
+            this.sourceMiniprogram = sourceMiniprogram;
+        }
+
+        public String getDeveloper() {
+            return developer;
+        }
+
+        public void setDeveloper(String developer) {
+            this.developer = developer;
+        }
+
         @Override
         public String toString() {
             return "CodeTemplate{" +
@@ -74,6 +101,9 @@ public class GetCodeTemplateListResponse extends BaseResponse {
                     ", userVersion='" + userVersion + '\'' +
                     ", userDesc='" + userDesc + '\'' +
                     ", templateId=" + templateId +
+                    ", sourceMiniprogramAppid=" + sourceMiniprogramAppid +
+                    ", sourceMiniprogram=" + sourceMiniprogram +
+                    ", developer=" + developer +
                     '}';
         }
     }
